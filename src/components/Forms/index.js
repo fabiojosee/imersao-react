@@ -52,15 +52,6 @@ export default function Forms({ index, user }) {
               />
             </div>
 
-            {/* <div>
-                  <input
-                    placeholder="Digite um link para a comunidade"
-                    name="link"
-                    aria-label="Digite um link para a comunidade"
-                    type="text"
-                  />
-                </div> */}
-
             <button>
               Criar comunidade
             </button>
@@ -78,7 +69,7 @@ export default function Forms({ index, user }) {
             const data = new FormData(e.target);
             const declarationObj = {
               declaration: data.get('declaration'),
-              user: data.get('usser')
+              user: data.get('user')
             };
 
             fetch('/api/declaration', {

@@ -33,20 +33,14 @@ function ProfileRelationsBox(args) {
 
 export default function Home(props) {
   const user = props.user;
-  const [communities, setCommunities] = React.useState([]);
-  // {
-  //   id: new Date().toISOString(),
-  //   title: "Todo dia uma foto aleatória",
-  //   image: "https://picsum.photos/200/300",
-  //   link: "https://picsum.photos/"
-  // }
   const favorites = ['omariosouto', 'juunegreiros', 'peas'];
+  const [communities, setCommunities] = React.useState([]);
   const [declarations, setDeclarations] = React.useState([]);
   const [selectedForm, selectForm] = React.useState(0);
   const [followersCount, setFollowersCount] = React.useState(0);
   const [userName, setName] = React.useState('');
-
   const [followers, setFollowers] = React.useState([]);
+
   React.useEffect(async function () {
 
     fetch(`https://api.github.com/users/${user}/followers`)
@@ -218,7 +212,7 @@ export default function Home(props) {
               {communities.slice(0, 6).map((item) => {
                 return (
                   <li key={item.id}>
-                    <a href={item.link} target="blank">
+                    <a>
                       <img src={item.imageUrl} />
                       <span>{item.title}</span>
                     </a>

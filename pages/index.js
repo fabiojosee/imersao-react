@@ -159,7 +159,7 @@ export default function Home(props) {
               padding: '14px 16px',
               borderRadius: '10px'
             }}>
-              {declarations.slice(0, 6).map((item) => {
+              {declarations.map((item) => {
                 return (
                   <li key={item.id} style={{
                     listStyleType: 'none',

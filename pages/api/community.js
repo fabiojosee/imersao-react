@@ -12,7 +12,6 @@ export default async function requestHandler(request, response) {
     })
 
     response.json({
-      dados: 'Teste',
       recordCreated: recordCreated
     })
     return;

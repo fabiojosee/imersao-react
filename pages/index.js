@@ -100,9 +100,7 @@ export default function Home(props) {
         return response.json();
       })
       .then(function (response) {
-        const userDeclarations = response.data.allDeclarations.filter(function (item) {
-          return user === item.user;
-        })
+        const userDeclarations = response.data.allDeclarations;
         setDeclarations(userDeclarations);
       })
 
@@ -144,7 +142,14 @@ export default function Home(props) {
 
           </Box>
 
-          <Forms index={selectedForm} user={user} />
+          <Forms
+            index={selectedForm}
+            user={user}
+            communities={communities}
+            setCommunities={setCommunities}
+            declarations={declarations}
+            setDeclarations={setDeclarations}
+          />
 
           <Box>
             <h2 className="subTitle">Depoimentos</h2>
@@ -154,7 +159,7 @@ export default function Home(props) {
               padding: '14px 16px',
               borderRadius: '10px'
             }}>
-              {declarations.slice(0, 6).map((item) => {
+              {declarations.map((item) => {
                 return (
                   <li key={item.id} style={{
                     listStyleType: 'none',

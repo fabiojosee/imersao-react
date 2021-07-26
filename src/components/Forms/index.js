@@ -1,9 +1,6 @@
-import React from 'react'
 import Box from '../Box'
 
-export default function Forms({ index, user }) {
-  const [communities, setCommunities] = React.useState([]);
-  const [declarations, setDeclarations] = React.useState([]);
+export default function Forms({ index, user, communities, setCommunities, declarations, setDeclarations }) {
 
   switch (index) {
     case 0:

@@ -100,9 +100,7 @@ export default function Home(props) {
         return response.json();
       })
       .then(function (response) {
-        const userDeclarations = response.data.allDeclarations.filter(function (item) {
-          return user === item.user;
-        })
+        const userDeclarations = response.data.allDeclarations;
         setDeclarations(userDeclarations);
       })
 
@@ -144,7 +142,14 @@ export default function Home(props) {
 
           </Box>
 
-          <Forms index={selectedForm} user={user} />
+          <Forms
+            index={selectedForm}
+            user={user}
+            communities={communities}
+            setCommunities={setCommunities}
+            declarations={declarations}
+            setDeclarations={setDeclarations}
+          />
 
           <Box>
             <h2 className="subTitle">Depoimentos</h2>
